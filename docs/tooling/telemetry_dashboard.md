@@ -33,7 +33,7 @@ Telemetry in Qlik Sense Enterprise is essentially:
 
 (2) refers to the fact that the Qlik Engine treats requests differently than what a user might expect. Engine requests can refer to obvious things like opening an app (`OpenApp` method) or reloading an app (`DoReload` or `DoReloadEx` methods). Those are straight-forward. Less intuitive is that when inside of a Qlik app, each visualization on a sheet is a separate request to the Engine. In this example we are high-lighting the 8 different requests (`GetLayout` method) which are made when opening our example sheet:
 
-[![telemetry-1.gif](images/telemetry-1.gif)](https://raw.githubusercontent.com/eapowertools/qs-admin-playbook/master/docs/tooling/images/telemetry-1.gif)
+[![telemetry-1.gif](images/telemetry-1.gif)](https://raw.githubusercontent.com/qs-admin-guide/qs-admin-playbook/master/docs/tooling/images/telemetry-1.gif)
 
 When a request breaches the configured threshold, the individual request will be logged. In the example above, if the filter pane in the upper left hand corner breaches the threshold, the log file will record the request for just that object (e.g. a `GetLayout` call for object `NpbzKm`).
 
@@ -67,7 +67,7 @@ The Qlik Sense Telemetry Dashboard project provides an installer which installs 
 
 (1) is needed to build out the hierarchical relationship between visualization objects, the sheets in which the visualizations live, and the apps which hold those sheets.
 
-[![telemetry-2.png](images/telemetry-2.png)](https://raw.githubusercontent.com/eapowertools/qs-admin-playbook/master/docs/tooling/images/telemetry-2.png)
+[![telemetry-2.png](images/telemetry-2.png)](https://raw.githubusercontent.com/qs-admin-guide/qs-admin-playbook/master/docs/tooling/images/telemetry-2.png)
 
 This hierarchy allows for the consumer of the Telemetry Dashboard Qlik app to place the request in context. Moreover, with this context, specific feedback can be made to the developer(s) of this app to focus their optimization efforts on the offending visualization(s) rather than providing much more generic feedback that 'the app is slow'.
 
@@ -75,7 +75,7 @@ Since the project needs these NodeJS scripts to build the hierarchy of app <> sh
 
 ### Considerations on setting thresholds
 
-As covered above, this feature in Qlik Sense Enterprise requires the administrator to set the thresholds which register as ERRORs or WARNs. Making the configuration change is covered on the [project's wiki](https://github.com/eapowertools/qs-telemetry-dashboard/wiki/Logging). We will cover what _values_ are appropriate to be set. A common set of configs are:
+As covered above, this feature in Qlik Sense Enterprise requires the administrator to set the thresholds which register as ERRORs or WARNs. Making the configuration change is covered on the [project's wiki](https://github.com/qs-admin-guide/qs-telemetry-dashboard/wiki/Logging). We will cover what _values_ are appropriate to be set. A common set of configs are:
 
 ```
 ErrorPeakMemory=2147483648
@@ -101,7 +101,7 @@ Once the Telemetry logging is configured, the server has run for a few days to b
 
 ## Documentation:
 
-- [Qlik Sense Telemetry Dashboard Project](https://github.com/eapowertools/qs-telemetry-dashboard)
+- [Qlik Sense Telemetry Dashboard Project](https://github.com/qs-admin-guide/qs-telemetry-dashboard)
 - [Youtube Video - Initial Configuration](https://www.youtube.com/watch?v=dfkoc4Dwb0g&feature=youtu.be)
 - [Youtube Video - Installation](https://www.youtube.com/watch?v=EPLl1BODwH4&feature=youtu.be)
 - [Youtube Video - App Config](https://www.youtube.com/watch?v=iLKOpnKbLJg&feature=youtu.be)

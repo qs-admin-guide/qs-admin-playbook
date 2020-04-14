@@ -4,7 +4,7 @@ plugins:
 relative_links:
   enabled: true
 logo: "/assets/images/AdminPlaybook3.png"
-url: "https://adminplaybook.qlik-poc.com"
+url: "https://adminplaybook-dev.qlik-poc.com"
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -16,7 +16,7 @@ aux_links:
   "Diagnostic Toolkit":
     - "//diagnostictoolkit.qlik-poc.com"
   "EA Powertools":
-    - "//github.com/eapowertools"
+    - "//github.com/qs-admin-guide"
   "Qlik Help":
     - "//help.qlik.com"
 assets:
